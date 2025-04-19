@@ -25,7 +25,6 @@ class Employee(User):
 class Admin(User):
     def __init__(self, name, phone, email, address):
         super().__init__(name, phone, email, address)
-        self.employees = [] # work as database
     
     
     def add_employee(self,name,email,phone,address,age, designation, salary):
@@ -38,6 +37,15 @@ class Admin(User):
         for emp in self.employees:
             print(emp.name, emp.email, emp.phone, emp.address)
         
+
+class Restaurant:
+    def __init__(self, name):
+        self.name = name  
+        self.employees = [] # work as database
+
+    def add_employee(self,employee):
+        self.employees.append(employee) # append() is used to add an item to the end of a list
+
 
 ad = Admin('Karim', '1233454', 'karim@gmail.com', 'Dhaka')
 ad.add_employee('Sagor', 'sagor@gmail.com', '1235123', 'Khulna', 32 , 'Chef', 34000)
